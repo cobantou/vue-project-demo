@@ -1,0 +1,56 @@
+{
+  "name": "my-project",
+  "version": "0.0.0",
+  "description": "A vue project.",
+  "private": false,
+  "keywords": [],
+  "scripts": {
+    "dev": "cooking watch -p",
+    "dist": "cooking build -p",
+    "deploy": "cooking build --no-color",
+    "test": "cooking test karma start --single-run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+y/my-project.git"
+  },
+  "homepage": "y/my-project#readme",
+  "bugs": {
+    "url": "y/my-project/issues"
+  },
+  "author": "cobantou",
+  "license": "ISC",
+  "dependencies": {
+    "babel-polyfill": "*",
+    "mint-ui": "^2.0.2",
+    "vue": "^2.0.1",
+    "vue-router": "^2.0.1",
+    "vuex": "^2.0.0",
+    "whatwg-fetch": "^1.0.0"
+  },
+  "devDependencies": {
+    "cooking-vue2": "*",
+    "cooking": "^1.0.0",
+    "cooking-lint": "*",
+    "cooking-less": "*",
+    "cooking-autoprefixer": "*",
+    "babel-core": "^6.0.0",
+    "babel-loader": "^6.0.0",
+    "babel-plugin-transform-runtime": "^6.0.0",
+    "babel-preset-es2015": "^6.0.0",
+    "babel-preset-stage-0": "^6.0.0",
+    "babel-preset-stage-2": "^6.0.0",
+    "css-loader": "^0.24.0",
+    "extract-text-webpack-plugin": "^1.0.0",
+    "file-loader": "^0.9.0",
+    "html-loader": "^0.4.3",
+    "html-webpack-plugin": "^2.9.0",
+    "json-loader": "^0.5.4",
+    "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.12.0",
+    "webpack-dev-server": "^1.14.0",
+    "postcss": "^5.1.0",
+    "postcss-loader": "^0.11.1"
+  }
+}
