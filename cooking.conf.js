@@ -10,20 +10,23 @@ cooking.set({
 
   devServer: {
     port: 8888,
-    publicPath: '/'
+    publicPath: '/',
+	secure:true,
+	host: '172.168.200.56'
   },
 
   // production
   clean: true,
   hash: true,
   sourceMap: true,
+  
   minimize: true,
   chunk: true, // see https://cookingjs.github.io/zh-cn/configuration.html#chunk
   postcss: [
     // require('...')
   ],
   publicPath: '/dist/',
-  assetsPath: 'static',
+  assetsPath: 'assets',
   urlLoaderLimit: 10000,
   extractCSS: '[name].[contenthash:7].css',
   alias: {

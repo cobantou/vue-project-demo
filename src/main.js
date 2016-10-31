@@ -6,22 +6,48 @@ import VueRouter from 'vue-router';
 import MintUI from 'mint-ui';
 import 'mint-ui/lib/style.css';
 
-import router from './routers/index'
+import routes from './routers/index'
 import App from './app';
 
 Vue.use(Vuex);
 Vue.use(VueRouter);
 Vue.use(MintUI);
 
+//const router = new VueRouter({
+//hashbang: true,
+//history: false
+//})
+//route(router)
+
 const router = new VueRouter({
-  hashbang: true,
-  history: false
-})
-route(router)
-
-
-var appVm = new Vue({ // eslint-disable-line
-	el: '#app',
-	render: h => h(App)
+	mode: "hash",
+	routes, // （缩写）相当于 routes: routes
+	scrollBehavior(to, from, savedPosition) {
+		if(savedPosition) {
+			return savedPosition
+		} else {
+			return {
+				x: 0,
+				y: 0
+			}
+		}
+	}
 });
 
+//注册路由切换前
+router.beforeEach((to, from, next) => {
+	//      transition.next();
+	console.info("|beforeEach");
+	console.log("app->"+router.app);
+	console.log("mode->"+router.mode);
+	if(router.currentRoute){
+		console.log("currentRoute->"+router.currentRoute.fullPath);
+	}
+	next()
+});
+
+var appVm = new Vue({ // eslint-disable-line
+	render: h => h(App),
+	router: router,
+
+}).$mount("#app");

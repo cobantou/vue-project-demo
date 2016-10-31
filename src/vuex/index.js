@@ -1,22 +1,26 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import * as actions from './actions'
-import * as getters from './getters'
-import cart from './modules/cart'
-import products from './modules/products'
-import createLogger from '../../../src/plugins/logger'
+//import * as actions from './actions'
+//import * as getters from './getters'
+
+//import cart from './modules/cart'
+//import products from './modules/products'
+//import createLogger from '../../../src/plugins/logger'
+
+import tabBar from './modules/tabBar'
 
 Vue.use(Vuex)
 
 const debug = process.env.NODE_ENV !== 'production'
 
 export default new Vuex.Store({
-  actions,
-  getters,
-  modules: {
-    cart,
-    products
-  },
+//actions,
+//getters,
+modules: {
+//  cart,
+//  products
+		tabBar
+},
   strict: debug,
-  plugins: debug ? [createLogger()] : []
+//plugins: debug ? [createLogger()] : []
 })
