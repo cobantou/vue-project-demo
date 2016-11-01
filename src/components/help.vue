@@ -1,13 +1,7 @@
 <template>
 	<!--template里面必须要有一个根元素，但不一定是div-->
 	<div class="">
-		<mt-cell-swipe title="标题文字" :right="[
-    {
-      content: 'Delete',
-      style: { background: 'red', color: '#fff' },
-      handler: () => this.$messagebox('delete')
-    }
-  ]"></mt-cell-swipe>
+		<mt-cell-swipe title="标题文字" :right="[{content: 'Delete',style: { background: 'red', color: '#fff' },handler: function() {this.$messagebox('delete')}}]"></mt-cell-swipe>
 		<mt-cell title="标题文字" value="说明文字"></mt-cell>
 		<mt-cell title="标题文字"></mt-cell>
 		<mt-cell title="标题文字" to="/github.com" is-link value="带链接">

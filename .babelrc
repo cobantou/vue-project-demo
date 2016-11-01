@@ -5,8 +5,8 @@
     "production": {
       "plugins": [
         "transform-runtime",
-		"transform-vue-jsx"
-		
+		"transform-vue-jsx",
+		["component", { "libraryName": "mint-ui", "style": true }]		
       ]
     }
   }

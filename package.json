@@ -5,6 +5,7 @@
   "private": false,
   "keywords": [],
   "scripts": {
+    "mock": "node mock/server.js -p",
     "dev": "cooking watch -p",
     "dist": "cooking build -p",
     "deploy": "cooking build --no-color",
@@ -21,8 +22,6 @@
   "author": "cobantou",
   "license": "ISC",
   "dependencies": {
-    "babel-plugin-component": "^0.5.0",
-    "babel-plugin-transform-vue-jsx": "^3.1.1",
     "babel-polyfill": "*",
     "mint-ui": "^2.0.2",
     "vue": "^2.0.1",

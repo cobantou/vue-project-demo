@@ -2,12 +2,12 @@
 
 <script>
 	export default {
-		 render (h) {
-		    return (
-		      <p
-		      ></p>
-		    )
-		  }
+//		 render: function(createElement) {
+//		    return (
+//		      <p
+//		      ></p>
+//		    )
+//		  }
 	}
 </script>
 

@@ -1,6 +1,8 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import VueRouter from 'vue-router';
+import VueResource from 'vue-resource'
+//import 'whatwg-fetch';
 
 //用mint只是做个demo，实际项目不一定用这个，还不是很完善
 import MintUI from 'mint-ui';
@@ -11,6 +13,7 @@ import App from './app';
 
 Vue.use(Vuex);
 Vue.use(VueRouter);
+Vue.use(VueResource);
 Vue.use(MintUI);
 
 //const router = new VueRouter({
@@ -19,8 +22,27 @@ Vue.use(MintUI);
 //})
 //route(router)
 
+//使用fetch需要补充的知识点比较多，如果时间不允许可以考虑使用vue-resource、ajax
+//fetch('/api/my/people')
+//	.then(function(response) {
+//		console.log ("response=>"+response)
+//		return response.text()
+//	}).then(function(body) {
+//		console.info("body=>"+body)
+//	})
+
+Vue.http.get('/api/my/people')
+	.then(function(response) {
+		console.info("response object:")
+		console.log(response)
+		response.text().then(text=>{console.log("text():"+text)})
+		response.json().then(json=>{console.log("json():"+JSON.stringify(json))})
+		response.blob().then(blob=>{console.log("blob():"+window.URL.createObjectURL(blob))})
+	})
+
+
 const router = new VueRouter({
-	mode: "hash",
+	mode: "history",
 	routes, // （缩写）相当于 routes: routes
 	scrollBehavior(to, from, savedPosition) {
 		if(savedPosition) {

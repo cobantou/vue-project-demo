@@ -2,15 +2,15 @@
 	//路由表
 	const routes = [
 		//默认
-		{
-			path: '/',
-			name: 'index',
-//			redirect:"/home",
-			component: resolve=> {
-				return require(['../components/swipe'], resolve)
-			}
-
-		},
+//		{
+//			path: '/',
+//			name: 'index',
+////			redirect:"/home",
+//			component: resolve=> {
+//				return require(['../components/swipe'], resolve)
+//			}
+//
+//		},
 		//首页
 		{
 			path: '/index',

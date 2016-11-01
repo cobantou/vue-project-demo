@@ -12,7 +12,14 @@ cooking.set({
     port: 8888,
     publicPath: '/',
 	secure:true,
-	host: '172.168.200.56'
+	host: '172.168.200.56',
+	proxy: {
+        '/api/*': {
+			target:'http://localhost:3000',
+			secure:false,
+			pathRewrite: {'^/api' : ''}
+		}
+    }
   },
 
   // production
